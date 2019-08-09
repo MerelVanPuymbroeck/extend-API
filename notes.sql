@@ -1,8 +1,10 @@
-CREATE TABLE IF NOT EXISTS `Notes`.
-`Notes` 
-(`ID` INT(255) NULL DEFAULT NULL , 
-`Date` DATETIME(255) NULL DEFAULT CURRENT_TIMESTAMP , 
-`Title` VARCHAR(255) NULL DEFAULT NULL , 
-`Note` TEXT NULL DEFAULT NULL 
- PRIMARY KEY (title)
- ) 
+CREATE DATABASE notepad;
+
+CREATE TABLE notes
+(
+id              INT(255)        NULL, 
+date_posted     DATETIME        DEFAULT CURRENT_TIMESTAMP , 
+title           VARCHAR(255)    NOT NULL, 
+note            TEXT            NULL,
+PRIMARY KEY (title)
+);

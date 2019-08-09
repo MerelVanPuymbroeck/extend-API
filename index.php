@@ -1,23 +1,16 @@
 <?php
 
-$configData = require 'config.php';
+require 'config.php';
 
-$databaseMsql = $configData['databaseMsql'];
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
+ 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 
-function OpenCon()
- {
- $dbhost = "localhost";
- $dbuser = $databaseMsql['username'];
- $dbpass = $configData['databaseMsql']['password'];
- $db = "example";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- 
- return $conn;
- }
- 
-function CloseCon($conn)
- {
- $conn -> close();
- }
-   
+$title = $_GET['title'];
+$text = $_GET ['text'];
+print_r($title);
+print_r($text);
 ?>
