@@ -11,6 +11,7 @@ echo "Connected successfully";
 
 $title = $_GET['title'];
 $text = $_GET ['text'];
+$note = $_POST['note'];
 print_r($title);
 print_r($text);
 ?>
